@@ -1,0 +1,22 @@
+{
+  "name": "Exercises",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bodyPart": {
+      "type": "string",
+      "required": true
+    },
+    "exerciseName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
