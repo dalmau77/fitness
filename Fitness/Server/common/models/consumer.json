@@ -1,16 +1,20 @@
 {
-  "name": "Exercises",
-  "base": "PersistedModel",
+  "name": "Consumer",
+  "plural": "Consumers",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "bodyPart": {
+    "username": {
+      "type": "string"
+    },
+    "email": {
       "type": "string",
       "required": true
     },
-    "exerciseName": {
+    "password": {
       "type": "string",
       "required": true
     }
