@@ -45,7 +45,7 @@ class Register extends Component {
     return (
       <View style={register.container}>
         <View style={{ paddingBottom: 75 }}>
-          <Text style={register.header}>Sign In</Text>
+          <Text style={register.header}>Register</Text>
         </View>
         <TextInput
           style={register.input}
@@ -64,12 +64,14 @@ class Register extends Component {
           placeholder="Enter Password"
           placeholderTextColor='white'
           onChangeText={text => this.handlePassword(text)}
+          secureTextEntry={true}
         />
         <TextInput
           style={register.input}
           placeholder="Confirm Password"
           placeholderTextColor='white'
           onChangeText={text => this.handleConfirmedPassword(text)}
+          secureTextEntry={true}
         />
         <TouchableOpacity
           style={register.button}

@@ -3,7 +3,7 @@ const defaultState = {
   loginPassword: '',
   token: '',
   userId: '',
-  customerInfo: {}
+  consumerInfo: {}
 }
 
 export default function LoginReducer(state = defaultState, action) {
@@ -24,6 +24,7 @@ export default function LoginReducer(state = defaultState, action) {
     }
 
     case 'HANDLE_LOGIN_SUBMIT_FULFILLED': {
+      console.log(state)
       return {
         ...state,
         token: payload.data.id,
@@ -34,7 +35,7 @@ export default function LoginReducer(state = defaultState, action) {
     case 'HANDLE_GET_CUSTOMER_INFO_FULFILLED': {
       return {
         ...state,
-        customerInfo: payload.data
+        consumerInfo: payload.data
       }
     }
 
@@ -43,7 +44,6 @@ export default function LoginReducer(state = defaultState, action) {
     }
 
     case 'DESTROY_TOKEN':{
-      console.log('yoyo')
       return {
         ...state,
         token: '',

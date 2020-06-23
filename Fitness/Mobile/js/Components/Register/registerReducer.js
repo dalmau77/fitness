@@ -5,7 +5,7 @@ const defaultState = {
   confirmedRegisterPassword: '',
   token: '',
   userId: '',
-  customerInfo: {}
+  consumerInfo: {}
 }
 
 export default function RegisterReducer(state = defaultState, action) {
@@ -50,7 +50,7 @@ export default function RegisterReducer(state = defaultState, action) {
     case 'HANDLE_GET_CUSTOMER_INFO_FULFILLED': {
       return {
         ...state,
-        customerInfo: payload.data
+        consumerInfo: payload.data
       }
     }
 

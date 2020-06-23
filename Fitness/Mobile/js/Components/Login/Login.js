@@ -46,6 +46,7 @@ class Login extends Component {
           placeholder="Enter Password"
           placeholderTextColor='white'
           onChangeText={text => this.handlePassword(text)}
+          secureTextEntry={true}
         />
         <TouchableOpacity
           style={login.button}

@@ -24,12 +24,14 @@ export function handleLoginSubmit(email, password) {
         email: email.toLowerCase(),
         password: password
       })
-        .then(res => {
+        .then(res => 
+          {
           const data = res.data;
           dispatch(getCustomerInfo(data.userId))
           Actions.landing()
           return { data }
-        })
+        }
+        )
         .catch(err => alert('Login attempt failed. Wrong username or password.'))
     })
   }
@@ -45,7 +47,6 @@ function getCustomerInfo(userId) {
 }
 
 export function destroyToken(token) {
-  console.log('hi')
   return dispatch => {
     return dispatch({
       type: 'DESTROY_TOKEN',

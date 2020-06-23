@@ -31,17 +31,16 @@ export function handleConfirmedRegisterPassword(confirmedPassword) {
 }
 
 export function handleRegisterSubmit(username, email, password) {
-  console.log('hello actions')
   return dispatch => {
     return dispatch({
       type: 'HANDLE_CREATE_USER_SUBMIT',
       payload:
-        axios.post(`${HOST}/api/Consumers`, {
-          username: username,
-          email: email.toLowerCase(),
-          password: password,
-        })
-          .then(res =>
+      axios.post(`${HOST}/api/Consumers`, {
+        username: username,
+        email: email.toLowerCase(),
+        password: password,
+      })
+          .then(res => 
             axios.post(`${HOST}/api/Consumers/login`, {
               email: email.toLowerCase(),
               password: password
