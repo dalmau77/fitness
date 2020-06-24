@@ -1,9 +1,34 @@
 import React, { Component } from 'react'
 import { TextInput, Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { login } from '../../../styles/styles'
+import { Actions } from 'react-native-router-flux';
+import { login } from '../../../styles/styles';
+import { 
+  handleLoginEmail,
+  handleLoginPassword,
+  handleLoginSubmit
+ } from './loginActions';
 
 class Login extends Component {
+
+  handleEmail = text => {
+    const { dispatch } = this.props;
+    dispatch(handleLoginEmail(text));
+  }
+
+  handlePassword = text => {
+    const { dispatch } = this.props;
+    dispatch(handleLoginPassword(text));
+  }
+
+  handleSubmit = () => {
+    console.log('pressed')
+    const { dispatch } = this.props;
+    dispatch(handleLoginSubmit(this.props.loginEmail, this.props.loginPassword));
+  }
+
+  goToRegister = () => Actions.register();
+
   render() {
     return (
       <View style={login.container}>
@@ -21,6 +46,7 @@ class Login extends Component {
           placeholder="Enter Password"
           placeholderTextColor='white'
           onChangeText={text => this.handlePassword(text)}
+          secureTextEntry={true}
         />
         <TouchableOpacity
           style={login.button}
@@ -36,6 +62,7 @@ class Login extends Component {
   }
 }
 function mapStoreToProps(store) {
+ 
   return {
     loginEmail: store.login.loginEmail,
     loginPassword: store.login.loginPassword
