@@ -50,7 +50,7 @@ export const register = StyleSheet.create({
     height: 40,
     borderColor: 'white',
     borderWidth: 1,
-    borderRadius: 10
+    borderRadius: 10,
   },
   button: {
     borderColor: 'white',
@@ -77,7 +77,18 @@ export const register = StyleSheet.create({
 export const landingPage = StyleSheet.create({
   container: {
     alignContent: 'space-around',
-    backgroundColor: '#3282b8',
+    backgroundColor: 'red',
     paddingTop: 100,
-  }
+  },
+  controlBar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+		height: 45,
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: "rgba(0, 0, 0, 0.5)",
+	}
 })
